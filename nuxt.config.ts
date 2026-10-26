@@ -8,6 +8,21 @@ export default defineNuxtConfig({
     compatibilityVersion: 5,
   },
 
+  app: {
+    head: {
+      style: [
+        { innerHTML: '.ab-hide { opacity: 0 !important }' },
+      ],
+      script: [
+        // A/B testing anti-flicker snippet: hide the page until experiments are applied
+        { innerHTML: '(function(d,t){d.documentElement.classList.add(\'ab-hide\');setTimeout(function(){d.documentElement.classList.remove(\'ab-hide\')},t)})(document,3000)' },
+        { src: '/ab/experiments.js', async: true },
+        // Heatmap vendor, loaded from a separate origin (127.0.0.1 <-> localhost emulates a third-party CDN locally)
+        { innerHTML: '(function(l){var s=document.createElement(\'script\');s.async=true;s.src=l.protocol+\'//\'+(l.hostname===\'localhost\'?\'127.0.0.1\':\'localhost\')+(l.port?\':\'+l.port:\'\')+\'/vendor/heatmap.js\';document.head.appendChild(s)})(location)' },
+      ],
+    },
+  },
+
   typescript: {
     appTsConfig: {
       exclude: ['../proxy/**'],
