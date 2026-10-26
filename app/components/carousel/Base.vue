@@ -1,7 +1,16 @@
 <script setup lang="ts">
 const scrollEl = ref<HTMLDivElement>()
 
+// keep all cards the same height so titles of different length line up
+function equalizeCardHeights() {
+  for (const card of document.querySelectorAll<HTMLElement>('[data-card]')) {
+    card.style.minHeight = ''
+    card.style.minHeight = `${card.offsetHeight}px`
+  }
+}
+
 function scrollLeft() {
+  equalizeCardHeights()
   scrollEl.value?.scrollBy({
     left: -window.innerWidth,
     behavior: 'smooth',
@@ -9,6 +18,7 @@ function scrollLeft() {
 }
 
 function scrollRight() {
+  equalizeCardHeights()
   scrollEl.value?.scrollBy({
     left: window.innerWidth,
     behavior: 'smooth',

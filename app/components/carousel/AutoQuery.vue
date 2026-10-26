@@ -6,7 +6,9 @@ const props = defineProps<{
   priority?: boolean
 }>()
 
-const item = await listMedia(props.query.type, props.query.query, 1)
+// render the first few pages upfront so scrolling the carousel never shows an empty state
+const pages = await Promise.all([1, 2, 3].map(page => listMedia(props.query.type, props.query.query, page)))
+const item = { results: pages.flatMap(page => page.results) }
 </script>
 
 <template>

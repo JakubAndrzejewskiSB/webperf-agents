@@ -6,6 +6,9 @@ const props = defineProps<{
   item: Media
 }>()
 
+const img = useImage()
+const backdrop = computed(() => `url('${img(`/tmdb${props.item.backdrop_path}`)}')`)
+
 const trailer = computed(() => getTrailer(props.item))
 
 const showModal = useIframeModal()
@@ -21,18 +24,11 @@ function playTrailer() {
       absolute top-0 right-0
       lt-lg="left-0"
       lg="bottom-0 left-1/3"
-    >
-      <NuxtImg
-        width="1220"
-        height="659"
-        format="webp"
-        :src="`/tmdb${props.item.backdrop_path}`"
-        :alt="props.item.title || props.item.name"
-        loading="eager"
-        preload
-        h-full w-full object-cover
-      />
-    </div>
+      role="img"
+      :aria-label="props.item.title || props.item.name"
+      bg-cover bg-center
+      :style="{ backgroundImage: backdrop }"
+    />
     <div
       absolute bottom-0 left-0 top-0 px-10 justify-center
       flex="~ col"
