@@ -1,0 +1,47 @@
+{
+  "version": 1,
+  "skills": {
+    "modern-web-guidance": {
+      "source": "GoogleChrome/modern-web-guidance",
+      "sourceType": "github",
+      "skillPath": "skills/modern-web-guidance/SKILL.md",
+      "computedHash": "8e91867cc20dda14251c78c8d905847314c8c196557e1181d586a456cddcb5dc"
+    },
+    "webperf": {
+      "source": "nucliweb/webperf-snippets",
+      "sourceType": "github",
+      "skillPath": "skills/webperf/SKILL.md",
+      "computedHash": "35d6b787b23ad07ec4b2114d9c783b364a1c36a451a9150437edca0e56c31b39"
+    },
+    "webperf-core-web-vitals": {
+      "source": "nucliweb/webperf-snippets",
+      "sourceType": "github",
+      "skillPath": "skills/webperf-core-web-vitals/SKILL.md",
+      "computedHash": "dd421a5da38eb43f717f4ceaeb1e0a79fdfcd9c9ca39c791f2aff6c58a2d11dd"
+    },
+    "webperf-interaction": {
+      "source": "nucliweb/webperf-snippets",
+      "sourceType": "github",
+      "skillPath": "skills/webperf-interaction/SKILL.md",
+      "computedHash": "f349e00eb9f6f1e7c9099ffa94f511ad780c6260e8556591558cb3fb48888a5f"
+    },
+    "webperf-loading": {
+      "source": "nucliweb/webperf-snippets",
+      "sourceType": "github",
+      "skillPath": "skills/webperf-loading/SKILL.md",
+      "computedHash": "c674867bc98284d1b3d16dbea303c43010ace770206213d1d4aa74344bdc55e8"
+    },
+    "webperf-media": {
+      "source": "nucliweb/webperf-snippets",
+      "sourceType": "github",
+      "skillPath": "skills/webperf-media/SKILL.md",
+      "computedHash": "8f136e29fc22ef7a92537c764f366828c533ad31dfe74c81cbdf37d40ca08ff7"
+    },
+    "webperf-resources": {
+      "source": "nucliweb/webperf-snippets",
+      "sourceType": "github",
+      "skillPath": "skills/webperf-resources/SKILL.md",
+      "computedHash": "86f9b8d3b6c7b4040badcc2451e6099c26df1c22e67042a811c7c53992d0b801"
+    }
+  }
+}
